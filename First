@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style type="text/css">
+        .Textbox1 {
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            padding: .5em .5em 0;
+            margin: .5em;
+            overflow: visible;
+        }
+
+        button {
+            padding: 12px 50px;
+            border: none;
+            background-color: rgb(91,234,208);
+            color: #333;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+
+        input {
+            padding: 12px 20px;
+        }
+    </style>
+    <div>
+        <div>
+            <div>
+                <details style="border: 1px solid #aaa; border-radius: 4px; padding: .5em .5em 0; margin: .5em">
+                    <summary style="font-weight: bold; margin: -.5em -.5em 0; padding: .5em;">Improvement action 1 title</summary>
+                    <div class="statements">
+                        <ul>
+                            <li>Evidence statements go here</li>
+                            <li>Evidence statements go here</li>
+                            <li>Evidence statements go here</li>
+                            <li>Evidence statements go here</li>
+                        </ul>
+                    </div>
+                </details>
+                <details style="border: 1px solid #aaa; border-radius: 4px; padding: .5em .5em 0; margin: .5em">
+                    <summary style="font-weight: bold; margin: -.5em -.5em 0; padding: .5em;">Improvement action 2 title</summary>
+                    <div class="statements">
+                        <ul>
+                            <li>Evidence statements go here</li>
+                            <li>Evidence statements go here</li>
+                            <li>Evidence statements go here</li>
+                            <li>Evidence statements go here</li>
+                        </ul>
+                    </div>
+                </details>
+                <details style="border: 1px solid #aaa; border-radius: 4px; padding: .5em .5em 0; margin: .5em">
+                    <summary style="font-weight: bold; margin: -.5em -.5em 0; padding: .5em;">Improvement action 3 title</summary>
+                    <div class="statements">
+                        <ul>
+                            <li>Evidence statements go here</li>
+                            <li>Evidence statements go here</li>
+                            <li>Evidence statements go here</li>
+                            <li>Evidence statements go here</li>
+                        </ul>
+                    </div>
+                </details>
+                <details style="border: 1px solid #aaa; border-radius: 4px; padding: .5em .5em 0; margin: .5em">
+                    <summary style="font-weight: bold; margin: -.5em -.5em 0; padding: .5em;">Improvement action 4 title</summary>
+                    <div class="statements">
+                        <ul>
+                            <li>Evidence statements go here</li>
+                            <li>Evidence statements go here</li>
+                            <li>Evidence statements go here</li>
+                            <li>Evidence statements go here</li>
+                        </ul>
+                    </div>
+                </details>
+
+
+                <div>&nbsp;</div>
+                <div>
+                    <div>
+                        <div>An example question goes here and you fill in the box below with your answer</div>
+                        <div id="testdiv"><textarea style="display:block" class="Textbox1" cols="50" rows="5">Text area</textarea></div>
+                    </div>
+                </div>
+                <div>&nbsp;</div>
+                <div">
+                    <div><span style="font-size: 12px;">An example question goes here and you fill in the box below with your answer</span></div>
+                    <div><textarea class="Textbox1" cols="50" rows="5">Text area</textarea></div>
+            </div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>
+                <div><span style="font-size: 12px;">An example question goes here and you fill in the box below with your answer</span></div>
+                <div><textarea class="Textbox1" cols="50" rows="5">Text area</textarea></div>
+                <div>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <div>
+                        <div">
+                    </div>
+                    <span style="font-size: 12px;">An example question goes here and you fill in the box below with your answer</span>
+                    <div><textarea class="Textbox1" cols="50" rows="5">Text area</textarea></div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- this is the testdiv end-->
+    <!--<div><textarea class="flex-container">Text area</textarea></div>-->
+
+
+    <a href="javascript:genPDF()">Download PDF</a>
+    <script>
+var lMargin=15; //left margin in mm
+    var rMargin=15; //right margin in mm
+    var pdfInMM=210;  // width of A4 in mm
+    function getPDF() {
+	var doc = new jsPDF("p","mm","a4");
+	//var paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed bibendum mauris, sit amet ornare mi. Donec venenatis, ligula at tincidunt mollis, risus neque condimentum massa, id commodo libero sem id urna. Curabitur quis elit libero. Maecenas et ante a orci facilisis ultrices et sit amet orci. Phasellus consequat, mauris eu mattis commodo, sapien nulla ultrices nunc, et consectetur nulla turpis sed diam. Suspendisse laoreet nisl mauris, et cursus mi bibendum in. Ut pretium malesuada libero, at sollicitudin mi tristique ac. Nunc libero risus, interdum in tristique in, elementum a enim. Donec ultricies ligula at elit viverra, ut semper felis condimentum.";
+
+        //var paragraph = document.getElementById(testdiv).value; //this doesn't work
+        //var paragraph = $("div").find('#' + testdiv); //this doesnt work
+        //var paragraph = ($("#testdiv"))
+	var paragraph = #testdiv;
+	var lines =doc.splitTextToSize(paragraph, (pdfInMM-lMargin-rMargin));
+	doc.text(lMargin,20,lines);
+	doc.save('Generated.pdf');
+    }
+</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"
+            integrity="sha256-vIL0pZJsOKSz76KKVCyLxzkOT00vXs+Qz4fYRVMoDhw="
+            crossorigin="anonymous"></script>
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>-->
+    <button id="getPDF" onclick="getPDF()">Get PDF</button>
+ 
+</body>
+</html>
